@@ -53,6 +53,25 @@
             <button>Submit</button>
         </div>
     </form>
+    <script>
+        const text = document.querySelector("#text");
+        const textError = document.querySelector(".text-error");
+        text.addEventListener("input",function(){
+            let RegexName=RegExp("^[A-Z]{1}[a-z]{3,}$");
+            if(RegexName.test(text.value)){
+                textError.textContent = "";
+            }else{
+                textError.textContent = "Invalid name";
+            }
+        });
+
+        const salary = document.querySelector("#salary");
+        const output = document.querySelector(".salary-output");
+        output.textContent = salary.value;
+        salary.addEventListener("input", function(){
+            output.textContent = salary.value;
+        });
+    </script>
     
 </body>
 </html>
