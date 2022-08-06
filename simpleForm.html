@@ -100,7 +100,7 @@
         const pwd = document.querySelector("#pwd");
         const passwordError = document.querySelector(".password-error");
         pwd.addEventListener("input",function(){
-            let RegexPassword=RegExp("^[a-zA-Z0-9]{8,}$");
+            let RegexPassword=RegExp("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\\W).*$");
             if(RegexPassword.test(pwd.value)){
                 passwordError.textContent = "";
             }else{
