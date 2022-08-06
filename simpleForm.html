@@ -18,6 +18,7 @@
         <div>
             <label for="pwd">Password input type</label>
             <input type="password" id="pwd" name="pwd">
+            <error-output class="password-error" for="pwd"></error-output>
         </div>
         <div>
             <label for="email">Email input type</label>
@@ -93,6 +94,17 @@
                 telError.textContent = "";
             }else{
                 telError.textContent = "Invalid phone number";
+            }
+        });
+
+        const pwd = document.querySelector("#pwd");
+        const passwordError = document.querySelector(".password-error");
+        pwd.addEventListener("input",function(){
+            let RegexPassword=RegExp("^[a-zA-Z0-9]{8,}$");
+            if(RegexPassword.test(pwd.value)){
+                passwordError.textContent = "";
+            }else{
+                passwordError.textContent = "Invalid password";
             }
         });
     </script>
